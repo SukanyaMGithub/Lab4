@@ -234,3 +234,9 @@ footer p {
     font-size: 12px;
   }
 }
+
+.audio-container {
+  
+  height: 30px;
+  width: 100px;
+}
