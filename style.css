@@ -18,6 +18,19 @@ header {
   text-align: center;
   padding: 1em;
 }
+.text-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#audio-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
 
 main {
   max-width: 800px;
@@ -233,10 +246,14 @@ footer p {
     padding-bottom: 5px;
     font-size: 12px;
   }
+
 }
 
-.audio-container {
-  
-  height: 30px;
-  width: 100px;
+#audio-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #f87a05; 
+  float: right;
 }

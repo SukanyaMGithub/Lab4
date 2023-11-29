@@ -187,3 +187,12 @@ function showError(message) {
   errorContainer.classList.remove('hidden');
   document.getElementById('resultContainer').classList.add('hidden');
 }
+
+function toggleAudio() {
+  const audio = document.getElementById('myAudio');
+  if(audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}

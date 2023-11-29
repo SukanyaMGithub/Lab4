@@ -10,10 +10,14 @@
 </head>
 <body>
     <header>
-    <h3 class="text-center"><i class="fas fa-sun"></i> Sunrise Sunset Dashboard
-      <audio id="myAudio" controls autoplay class="audio-container">
+    <h3 class="text-center"><i class="fas fa-sun"></i> &nbsp;Sunrise Sunset Dashboard &nbsp;<i class="fas fa-sun"></i>
+      <span id="play-button"> <button id="audio-button" onclick="toggleAudio()">&nbsp;&nbsp;Play Me </button> </span>
+    </h3>
+    
+      <audio id="myAudio" preload="auto">
         <source src="images/Beautiful-Piano.mp3" type="audio/mp3">
-    </audio></h3>
+    </audio>
+    
   </header>
   <main>
     
