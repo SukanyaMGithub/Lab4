@@ -47,7 +47,35 @@ function hideError() {
 }
 
 
-
+function getGeocodeData(location) {
+  $.ajax({
+      url: `https://geocode.maps.co/search?q=${location}&format=json`,
+    method: 'GET',
+    success: function (data) {
+      if (data && data.length > 0) {
+        const result = data[0];
+        const match = result.display_name
+        .toLowerCase()
+        .split(',')
+        .some(word => word.trim() === location.toLowerCase());
+        if(match) {
+          const latitude = result.lat;
+        const longitude = result.lon;
+        getSunriseSunsetData(latitude, longitude);
+        getTomorowSunriseSunsetData(latitude, longitude);  
+        } else {
+          showError('Location not found.');  
+        }
+        
+      } else {
+        showError('Location not found.');
+      }
+    },
+    error: function () {
+      showError('Error fetching geocode data.');
+    }
+  });
+}
  
 
 function getSunriseSunsetData(latitude, longitude) {
