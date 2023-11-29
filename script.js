@@ -32,7 +32,8 @@ function searchLocation() {
     showError('Please enter a location.');
   }
 
-  
+    // Clear the input after the search
+    locationInput.value = '';
 }
 
 function hideError() {
@@ -112,11 +113,10 @@ function getTomorowSunriseSunsetData(latitude, longitude) {
 function displaySunriseSunsetInfo(data) {
   const resultContainer = document.getElementById('resultContainer');
   
-  
-  resultContainer.innerHTML = `
+   resultContainer.innerHTML = `
     <div class="day-info">
       <h4>Today</h4>
-           <div class="sun-info">
+            <div class="sun-info">
         <span> 🌅<b> Sunrise:</b> ${data.results.sunrise || 'Not available'} <br>
         🌇 <b>Sunset:</b> ${data.results.sunset || 'Not available'}</span>
       </div>
@@ -142,10 +142,11 @@ function displayTomorrowSunriseSunsetInfo(data) {
 
   const tomorrowResultContainer = document.getElementById('tomorrowResultContainer');
 
+  
   tomorrowResultContainer.innerHTML = `
   <div class="day-info">
     <h4>Tomorrow</h4>
-       <div class="sun-info">
+        <div class="sun-info">
       <span>🌅 <b>Sunrise:</b> ${data.results.sunrise || 'Not available'}<br>
       🌇<b> Sunset:</b> ${data.results.sunset || 'Not available'}</span>
     </div>

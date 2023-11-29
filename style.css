@@ -1,81 +1,230 @@
-body {
-  font-family: 'Arial', sans-serif;
+/* Global styles */
+body, html {
   margin: 0;
   padding: 0;
-  background-image: url('sun.png'); /* Replace 'sun-background.jpg' with your sun image */
-  background-size: cover;
-  background-position: center;
-  color: #fff; /* Set text color to white for better visibility on the background */
+  height: 100%;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
 
 header {
-  background-color: rgba(51, 51, 51, 0.7); /* Add some transparency to the header background */
+  background-color: #343A40;
   color: #fff;
   text-align: center;
   padding: 1em;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.8); /* Add some transparency to the content background */
+  
 }
 
-.sun-image {
-  position: fixed;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);  
-  z-index: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .search-container {
   display: flex;
-  flex-direction: column;
   gap: 10px;
-  width: 100%;
-  max-width: 400px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: rgb(248, 248, 247);
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+}
+label {
+  font-weight: bold;
+  color: white;
 }
 
-.card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  margin-top: 20px;
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
+
+button {
+  padding: 10px;
+  background-color: #343A40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.result-containers {
+  display: flex;
+  justify-content: space-between;
+}
+
+#resultContainer,
+#tomorrowResultContainer,
+#errorContainer
+ {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 0px;
+  padding: 5px 20px 20px 20px;
+  color: white;
+  font-weight: bold;  
+}
+
+#errorContainer p {
+  text-align: center;
+}
+
 
 .hidden {
   display: none;
+  justify-content: center;
 }
 
-.bold {
+footer {
+  width: 100%;
+  height: fit-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #343A40;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 10px;
+  text-align: center;
+  color: #F5F5F5;
+}
+
+
+/* Style for the day-info container */
+.day-info {
+  background-color: #03030300;
+  padding: 1px 20px 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(248, 247, 247, 0.1);
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.day-info p {
+  color:white;
+  text-align: center; 
+}
+
+.day-info h4 {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for sun-info container */
+.sun-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #ffffffce; /* Background color for sun-info container */
+}
+
+.sun-info span {
+  margin-bottom: 10px;
+  color: #030303;
+  
+
+}
+
+.sun-info .bold-text {
+  font-weight: bold;
+  background-color: rgba(15, 15, 15, 0.377);
+}
+
+.sun-info .icon {
+  width: 20px; 
+  
 }
 
 /* Responsive layout */
-@media (min-width: 600px) {
-  .search-container {
-    flex-direction: row;
+/* Global styles */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; 
   }
 
-  .card {
-    margin: 20px;
+  header {
+    padding: 0.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #resultContainer,
+  #tomorrowResultContainer,
+  #errorContainer {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .day-info,
+  .sun-info {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .day-info h4,
+  .sun-info span {
+    font-size: 14px;
+  }
+
+  .sun-info .bold-text {
+    font-size: 12px;
+  }
+
+  .sun-info .icon {
+    width: 12px;
+  }
+
+  footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
   }
 }
