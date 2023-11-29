@@ -4,7 +4,13 @@ body, html {
   padding: 0;
   height: 100%;
 }
-
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('images/sun.png') center/cover; /* Background image */
+  
+}
 
 header {
   background-color: #343A40;

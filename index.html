@@ -9,35 +9,31 @@
   <title>Sunrise Sunset Dashboard</title>
 </head>
 <body>
-  <div class="overlay"></div>
-  <header class="bg-dark text-light p-3 header">
-    <h1 class="text-center"><i class="fas fa-sun"></i> Sunrise Sunset Dashboard</h1>
-  </header>
-  <main class="container mt-4 main">
-    <div class="search-container">
-      <label for="locationInput" class="sr-only">Enter Location:</label>
-      <div class="input-group">
-        <input type="text" id="locationInput" class="form-control" placeholder="Enter location...">
-        <div class="input-group-append">
-          <button class="btn btn-primary btn-block" onclick="searchLocation()">Search</button>
-          <button class="btn btn-secondary btn-block mt-2" onclick="getCurrentLocation()">Use Current Location</button>
-        </div>
-      </div>
-    </div>
-    <div id="resultContainer" class="hidden card">
-    <div id="tomorrowResultContainer" class="hidden"></div>
      
-    </div>
+  <header>
+    <h3 class="text-center"><i class="fas fa-sun"></i> Sunrise Sunset Dashboard</h3>
+  </header>
+  <main>
     
-    <div id="errorContainer" class="hidden alert alert-danger mt-4">
-  
+    <div class="search-container">
+      <label for="locationInput">Enter Location:</label>
+      <input type="text" id="locationInput" placeholder="Enter location...">
+      <button onclick="searchLocation()">Search</button>
+      <button onclick="getCurrentLocation()">Use Current Location</button>
     </div>
+
+    <div class="result-containers">
+      <div id="resultContainer" class="hidden"> </div>
+      <div id="tomorrowResultContainer" class="hidden"></div>
+    </div>
+
+    <div id="errorContainer" class="hidden"> </div>
   </main>
   <footer class="mt-4 text-center text-muted fixed-bottom">
     <p>
       <span>Created by Sukanya Marati</span> &#8226 <span>Powered by <a href="https://sunrisesunset.io/" target="_blank">Sunrise Sunset API</a></span>
     </p>
-  </footer> 
+  </footer>  
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="script.js"></script>
 </body>
