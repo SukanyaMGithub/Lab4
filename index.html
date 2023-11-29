@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Sunrise Sunset Dashboard</title>
+</head>
+<body>
+  <div class="overlay"></div>
+  <header class="bg-dark text-light p-3 header">
+    <h1 class="text-center"><i class="fas fa-sun"></i> Sunrise Sunset Dashboard</h1>
+  </header>
+  <main class="container mt-4 main">
+    <div class="search-container">
+      <label for="locationInput" class="sr-only">Enter Location:</label>
+      <div class="input-group">
+        <input type="text" id="locationInput" class="form-control" placeholder="Enter location...">
+        <div class="input-group-append">
+          <button class="btn btn-primary btn-block" onclick="searchLocation()">Search</button>
+          <button class="btn btn-secondary btn-block mt-2" onclick="getCurrentLocation()">Use Current Location</button>
+        </div>
+      </div>
+    </div>
+    <div id="resultContainer" class="hidden card">
+     
+    </div>
+    
+    <div id="errorContainer" class="hidden alert alert-danger mt-4">
+  
+    </div>
+  </main>
+ 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
