@@ -32,7 +32,8 @@ function searchLocation() {
     showError('Please enter a location.');
   }
 
-   
+    // Clear the input after the search
+    locationInput.value = '';
 }
 
 function hideError() {
